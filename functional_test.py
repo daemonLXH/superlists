@@ -46,7 +46,7 @@ class NewVisitorTest(unittest.TestCase):
         table = self.browser.find_element_by_id('id_list_table')
         rows = table.find_elements_by_tag_name('tr')
         self.assertTrue(
-            any(row.text == '1:Buy peacock feathers' for row in rows)
+            any(row.text == '1:Buy peacock feathers' for row in rows),'没有找到任何可显示的条目'
         )
 
         #页面中又显示了一个文本框,可以输入其它的待办事项
