@@ -1,8 +1,11 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from django.test import LiveServerTestCase
+
+
 import unittest
 
-class NewVisitorTest(unittest.TestCase):
+class NewVisitorTest(LiveServerTestCase):
 
     def setUp(self):
         self.browser = webdriver.Firefox()
@@ -21,7 +24,8 @@ class NewVisitorTest(unittest.TestCase):
         #伊丽丝听说有一个在线待办事项应用
         #她去看了这个应用的首页
 
-        self.browser.get('http://localhost:8000')
+        # self.browser.get('http://localhost:8000')
+        self.browser.get(self.live_server_url)
 
         #她注意到网页的标题和头部都包含了"To-Do"这个词
 
@@ -93,5 +97,5 @@ class NewVisitorTest(unittest.TestCase):
 
         self.fail('Finish the test!')
 
-if __name__ == '__main__':
-    unittest.main(warnings='ignore')
+# if __name__ == '__main__':
+#     unittest.main(warnings='ignore')
