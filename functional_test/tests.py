@@ -127,7 +127,7 @@ class NewVisitorTest(LiveServerTestCase):
 
         #她很满意,去睡觉了
 
-        self.fail('Finish the test!')
+        # self.fail('Finish the test!')
 
 # if __name__ == '__main__':
 #     unittest.main(warnings='ignore')
